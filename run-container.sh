@@ -1,0 +1,1 @@
+docker run --env-file .env --platform linux/amd64 -p 9000:8080 mssql-lambda-test:latest
