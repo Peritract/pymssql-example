@@ -1,4 +1,4 @@
-# PyMSSSQL example
+# PyMSSQL example
 
 A small example of using `pymssql` inside a Lambda function.
 
