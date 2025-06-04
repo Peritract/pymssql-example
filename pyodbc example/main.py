@@ -20,7 +20,7 @@ def handler(event=None, context=None):
 
     conn.close()
 
-    return data
+    return list(data)
 
 
 if __name__ == "__main__":
