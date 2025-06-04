@@ -5,9 +5,8 @@ from os import environ as ENV
 from dotenv import load_dotenv
 import pyodbc
 
-if __name__ == "__main__":
-    load_dotenv()
 
+def handler(event=None, context=None):
     conn_str = (f"DRIVER={{{ENV['DB_DRIVER']}}};SERVER={ENV['DB_HOST']};"
                 f"PORT={ENV['DB_PORT']};DATABASE={ENV['DB_NAME']};"
                 f"UID={ENV['DB_USERNAME']};PWD={ENV['DB_PASSWORD']};Encrypt=no;")
@@ -19,6 +18,11 @@ if __name__ == "__main__":
         cur.execute(q)
         data = cur.fetchone()
 
-    print(data)
-
     conn.close()
+
+    return data
+
+
+if __name__ == "__main__":
+    load_dotenv()
+    print(handler())
